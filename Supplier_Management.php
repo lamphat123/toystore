@@ -38,7 +38,7 @@ if (isset($_SESSION['email']) == false) {
                     <?php
                     $No = 1;
                     $result = pg_query($Connect, "SELECT * FROM suppliers");
-                    if (pg_num_rows($result) == 1) {
+                    if (pg_num_rows($result) > 0) {
                         while ($row = pg_fetch_assoc($result)) {
                     ?>
                             <tr>

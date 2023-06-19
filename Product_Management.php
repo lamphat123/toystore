@@ -56,7 +56,7 @@ if (isset($_SESSION['email']) == false) {
                             JOIN shops sh ON p.shop_id = sh.id
                             ORDER BY p.created_at DESC";
                     $result = pg_query($Connect, $sql);
-                    if (pg_num_rows($result) == 1) {
+                    if (pg_num_rows($result) > 0) {
                         while ($row = pg_fetch_assoc($result)) {
                     ?>
                             <tr>
